@@ -1,0 +1,277 @@
+Removed all files under the ./client & ./server folder !!
+====> 1. Cleaning Done
+Server YAML not found in ./server
+Copying the /etc/hyperledger/config/fabric-ca-server-config.yaml to ./rootserver!!!
+Server Started ... Logs available at /etc/hyperledger/rootserver/server.log
+====> 2. Starting ROOT CA server
+Client YAML not found in /etc/hyperledger/rootclient/caserver/admin
+Copying the /etc/hyperledger/config/fabric-ca-client-config.yaml to /etc/hyperledger/rootclient/caserver/admin!!!
+2021/11/25 16:39:07 [INFO] TLS Enabled
+2021/11/25 16:39:07 [INFO] generating key: &{A:ecdsa S:256}
+2021/11/25 16:39:07 [INFO] encoded CSR
+2021/11/25 16:39:08 [INFO] Stored client certificate at /etc/hyperledger/rootclient/caserver/admin/msp/signcerts/cert.pem
+2021/11/25 16:39:08 [INFO] Stored TLS root CA certificate at /etc/hyperledger/rootclient/caserver/admin/msp/tlscacerts/tls-ledger1-drosatos-eu-7056-ca.pem
+2021/11/25 16:39:08 [INFO] Stored Issuer public key at /etc/hyperledger/rootclient/caserver/admin/msp/IssuerPublicKey
+2021/11/25 16:39:08 [INFO] Stored Issuer revocation public key at /etc/hyperledger/rootclient/caserver/admin/msp/IssuerRevocationPublicKey
+========= Registering ===============
+Registering: ica-admin
+2021/11/25 16:39:10 [INFO] Configuration file location: /etc/hyperledger/rootclient/caserver/admin/fabric-ca-client-config.yaml
+2021/11/25 16:39:10 [INFO] TLS Enabled
+2021/11/25 16:39:10 [INFO] TLS Enabled
+Password: 2895605bfcda35868f80611b9f038a9e
+========= Enrolling ===============
+Enrolling: ica-admin
+Copied the Client Yaml from /etc/hyperledger/config/ica
+2021/11/25 16:39:10 [INFO] TLS Enabled
+2021/11/25 16:39:10 [INFO] generating key: &{A:ecdsa S:256}
+2021/11/25 16:39:10 [INFO] encoded CSR
+2021/11/25 16:39:10 [INFO] Stored client certificate at /etc/hyperledger/rootclient/ica/admin/msp/signcerts/cert.pem
+2021/11/25 16:39:10 [INFO] Stored TLS root CA certificate at /etc/hyperledger/rootclient/ica/admin/msp/tlscacerts/tls-ledger1-drosatos-eu-7056-ca.pem
+2021/11/25 16:39:10 [INFO] Stored Issuer public key at /etc/hyperledger/rootclient/ica/admin/msp/IssuerPublicKey
+2021/11/25 16:39:10 [INFO] Stored Issuer revocation public key at /etc/hyperledger/rootclient/ica/admin/msp/IssuerRevocationPublicKey
+====> /etc/hyperledger/rootclient/ica/admin/msp/admincerts
+===================================
+====> 3. Enrolled Bootstrap ROOT Identity and ICA
+Server YAML not found in ./server
+Copying the /etc/hyperledger/config/ica/fabric-ca-server-config.yaml to ./server!!!
+Server Started ... Logs available at /etc/hyperledger/server/server.log
+====> 4. Starting ICA server
+Client YAML not found in /etc/hyperledger/client/caserver/admin
+Copying the /etc/hyperledger/config/ica/admin/fabric-ca-client-config.yaml to /etc/hyperledger/client/caserver/admin!!!
+2021/11/25 16:39:16 [INFO] TLS Enabled
+2021/11/25 16:39:16 [INFO] generating key: &{A:ecdsa S:256}
+2021/11/25 16:39:16 [INFO] encoded CSR
+2021/11/25 16:39:16 [INFO] Stored client certificate at /etc/hyperledger/client/caserver/admin/msp/signcerts/cert.pem
+2021/11/25 16:39:16 [INFO] Stored TLS root CA certificate at /etc/hyperledger/client/caserver/admin/msp/tlscacerts/tls-ledger1-drosatos-eu-7054-ica.pem
+2021/11/25 16:39:16 [INFO] Stored TLS intermediate certificates at /etc/hyperledger/client/caserver/admin/msp/tlsintermediatecerts/tls-ledger1-drosatos-eu-7054-ica.pem
+2021/11/25 16:39:16 [INFO] Stored Issuer public key at /etc/hyperledger/client/caserver/admin/msp/IssuerPublicKey
+2021/11/25 16:39:16 [INFO] Stored Issuer revocation public key at /etc/hyperledger/client/caserver/admin/msp/IssuerRevocationPublicKey
+====> 5. Enrolled Bootstrap Identity
+====> 6. Stoping/Killing ROOT CA server
+========= Registering ===============
+FABRIC_CA_CLIENT_HOME=/etc/hyperledger/client/caserver/admin
+Registering: orderer-admin
+2021/11/25 16:39:20 [INFO] Configuration file location: /etc/hyperledger/client/caserver/admin/fabric-ca-client-config.yaml
+2021/11/25 16:39:20 [INFO] TLS Enabled
+2021/11/25 16:39:20 [INFO] TLS Enabled
+Password: f0e1a810c14bbd30a582cfd9c1c80cfb
+========= Enrolling ===============
+Enrolling: orderer-admin
+FABRIC_CA_CLIENT_HOME=/etc/hyperledger/client/orderer/admin
+Copied the Client Yaml from /etc/hyperledger/config/orderer
+2021/11/25 16:39:20 [INFO] TLS Enabled
+2021/11/25 16:39:20 [INFO] generating key: &{A:ecdsa S:256}
+2021/11/25 16:39:20 [INFO] encoded CSR
+2021/11/25 16:39:21 [INFO] Stored client certificate at /etc/hyperledger/client/orderer/admin/msp/signcerts/cert.pem
+2021/11/25 16:39:21 [INFO] Stored TLS root CA certificate at /etc/hyperledger/client/orderer/admin/msp/tlscacerts/tls-ledger1-drosatos-eu-7054-ica.pem
+2021/11/25 16:39:21 [INFO] Stored TLS intermediate certificates at /etc/hyperledger/client/orderer/admin/msp/tlsintermediatecerts/tls-ledger1-drosatos-eu-7054-ica.pem
+2021/11/25 16:39:21 [INFO] Stored Issuer public key at /etc/hyperledger/client/orderer/admin/msp/IssuerPublicKey
+2021/11/25 16:39:21 [INFO] Stored Issuer revocation public key at /etc/hyperledger/client/orderer/admin/msp/IssuerRevocationPublicKey
+====> /etc/hyperledger/client/orderer/admin/msp/admincerts
+===================================
+FABRIC_CA_CLIENT_HOME=/etc/hyperledger/client/orderer/admin
+Created MSP Under: /etc/hyperledger/client/orderer/admin/..
+========= Registering ===============
+FABRIC_CA_CLIENT_HOME=/etc/hyperledger/client/caserver/admin
+Registering: duth-admin
+2021/11/25 16:39:24 [INFO] Configuration file location: /etc/hyperledger/client/caserver/admin/fabric-ca-client-config.yaml
+2021/11/25 16:39:24 [INFO] TLS Enabled
+2021/11/25 16:39:24 [INFO] TLS Enabled
+Password: 2d24ffbc71ac3fbaee924caf032086f4
+========= Enrolling ===============
+Enrolling: duth-admin
+FABRIC_CA_CLIENT_HOME=/etc/hyperledger/client/duth/admin
+Copied the Client Yaml from /etc/hyperledger/config/duth
+2021/11/25 16:39:24 [INFO] TLS Enabled
+2021/11/25 16:39:24 [INFO] generating key: &{A:ecdsa S:256}
+2021/11/25 16:39:24 [INFO] encoded CSR
+2021/11/25 16:39:25 [INFO] Stored client certificate at /etc/hyperledger/client/duth/admin/msp/signcerts/cert.pem
+2021/11/25 16:39:25 [INFO] Stored TLS root CA certificate at /etc/hyperledger/client/duth/admin/msp/tlscacerts/tls-ledger1-drosatos-eu-7054-ica.pem
+2021/11/25 16:39:25 [INFO] Stored TLS intermediate certificates at /etc/hyperledger/client/duth/admin/msp/tlsintermediatecerts/tls-ledger1-drosatos-eu-7054-ica.pem
+2021/11/25 16:39:25 [INFO] Stored Issuer public key at /etc/hyperledger/client/duth/admin/msp/IssuerPublicKey
+2021/11/25 16:39:25 [INFO] Stored Issuer revocation public key at /etc/hyperledger/client/duth/admin/msp/IssuerRevocationPublicKey
+====> /etc/hyperledger/client/duth/admin/msp/admincerts
+===================================
+FABRIC_CA_CLIENT_HOME=/etc/hyperledger/client/duth/admin
+Created MSP Under: /etc/hyperledger/client/duth/admin/..
+========= Registering ===============
+FABRIC_CA_CLIENT_HOME=/etc/hyperledger/client/caserver/admin
+Registering: athena-admin
+2021/11/25 16:39:28 [INFO] Configuration file location: /etc/hyperledger/client/caserver/admin/fabric-ca-client-config.yaml
+2021/11/25 16:39:28 [INFO] TLS Enabled
+2021/11/25 16:39:28 [INFO] TLS Enabled
+Password: 8599a5de2b2c80e3a626b6c324f5a97a
+========= Enrolling ===============
+Enrolling: athena-admin
+FABRIC_CA_CLIENT_HOME=/etc/hyperledger/client/athena/admin
+Copied the Client Yaml from /etc/hyperledger/config/athena
+2021/11/25 16:39:28 [INFO] TLS Enabled
+2021/11/25 16:39:28 [INFO] generating key: &{A:ecdsa S:256}
+2021/11/25 16:39:28 [INFO] encoded CSR
+2021/11/25 16:39:29 [INFO] Stored client certificate at /etc/hyperledger/client/athena/admin/msp/signcerts/cert.pem
+2021/11/25 16:39:29 [INFO] Stored TLS root CA certificate at /etc/hyperledger/client/athena/admin/msp/tlscacerts/tls-ledger1-drosatos-eu-7054-ica.pem
+2021/11/25 16:39:29 [INFO] Stored TLS intermediate certificates at /etc/hyperledger/client/athena/admin/msp/tlsintermediatecerts/tls-ledger1-drosatos-eu-7054-ica.pem
+2021/11/25 16:39:29 [INFO] Stored Issuer public key at /etc/hyperledger/client/athena/admin/msp/IssuerPublicKey
+2021/11/25 16:39:29 [INFO] Stored Issuer revocation public key at /etc/hyperledger/client/athena/admin/msp/IssuerRevocationPublicKey
+====> /etc/hyperledger/client/athena/admin/msp/admincerts
+===================================
+FABRIC_CA_CLIENT_HOME=/etc/hyperledger/client/athena/admin
+Created MSP Under: /etc/hyperledger/client/athena/admin/..
+====> 7. Enrolled Admin Identities
+====> 8. Completed MSP setup for orgs
+FABRIC_CA_CLIENT_HOME=/etc/hyperledger/client/orderer/admin
+2021/11/25 16:39:32 [INFO] Configuration file location: /etc/hyperledger/client/orderer/admin/fabric-ca-client-config.yaml
+2021/11/25 16:39:32 [INFO] TLS Enabled
+2021/11/25 16:39:32 [INFO] TLS Enabled
+Password: 19c0cc398aa1a1f3091f646ca9a246c4
+======Completed: Step 1 : Registered orderer (can be done only once)====
+Copied the Client Yaml from /etc/hyperledger/config/caclient/fabric-ca-client-config.yaml/orderer
+======Completed: Step 2 : Copy Check Orderer Client YAML==========
+2021/11/25 16:39:32 [INFO] TLS Enabled
+2021/11/25 16:39:32 [INFO] generating key: &{A:ecdsa S:256}
+2021/11/25 16:39:32 [INFO] encoded CSR
+2021/11/25 16:39:33 [INFO] Stored client certificate at /etc/hyperledger/client/orderer/duthorderer/msp/signcerts/cert.pem
+2021/11/25 16:39:33 [INFO] Stored TLS root CA certificate at /etc/hyperledger/client/orderer/duthorderer/msp/tlscacerts/tls-ledger1-drosatos-eu-7054-ica.pem
+2021/11/25 16:39:33 [INFO] Stored TLS intermediate certificates at /etc/hyperledger/client/orderer/duthorderer/msp/tlsintermediatecerts/tls-ledger1-drosatos-eu-7054-ica.pem
+2021/11/25 16:39:33 [INFO] Stored Issuer public key at /etc/hyperledger/client/orderer/duthorderer/msp/IssuerPublicKey
+2021/11/25 16:39:33 [INFO] Stored Issuer revocation public key at /etc/hyperledger/client/orderer/duthorderer/msp/IssuerRevocationPublicKey
+======Completed: Step 3 : Enrolled orderer ========
+======Completed: Step 4 : MSP setup for the orderer========
+======Completed: Step 5 : Tar files for the orderer========
+FABRIC_CA_CLIENT_HOME=/etc/hyperledger/client/orderer/admin
+2021/11/25 16:39:35 [INFO] Configuration file location: /etc/hyperledger/client/orderer/admin/fabric-ca-client-config.yaml
+2021/11/25 16:39:35 [INFO] TLS Enabled
+2021/11/25 16:39:35 [INFO] TLS Enabled
+Password: fc510649c3c6c81537c2951e074d63fe
+======Completed: Step 1 : Registered orderer (can be done only once)====
+Copied the Client Yaml from /etc/hyperledger/config/caclient/fabric-ca-client-config.yaml/orderer
+======Completed: Step 2 : Copy Check Orderer Client YAML==========
+2021/11/25 16:39:35 [INFO] TLS Enabled
+2021/11/25 16:39:35 [INFO] generating key: &{A:ecdsa S:256}
+2021/11/25 16:39:35 [INFO] encoded CSR
+2021/11/25 16:39:36 [INFO] Stored client certificate at /etc/hyperledger/client/orderer/athenaorderer/msp/signcerts/cert.pem
+2021/11/25 16:39:36 [INFO] Stored TLS root CA certificate at /etc/hyperledger/client/orderer/athenaorderer/msp/tlscacerts/tls-ledger1-drosatos-eu-7054-ica.pem
+2021/11/25 16:39:36 [INFO] Stored TLS intermediate certificates at /etc/hyperledger/client/orderer/athenaorderer/msp/tlsintermediatecerts/tls-ledger1-drosatos-eu-7054-ica.pem
+2021/11/25 16:39:36 [INFO] Stored Issuer public key at /etc/hyperledger/client/orderer/athenaorderer/msp/IssuerPublicKey
+2021/11/25 16:39:36 [INFO] Stored Issuer revocation public key at /etc/hyperledger/client/orderer/athenaorderer/msp/IssuerRevocationPublicKey
+======Completed: Step 3 : Enrolled orderer ========
+======Completed: Step 4 : MSP setup for the orderer========
+======Completed: Step 5 : Tar files for the orderer========
+FABRIC_CA_CLIENT_HOME=/etc/hyperledger/client/orderer/admin
+2021/11/25 16:39:38 [INFO] Configuration file location: /etc/hyperledger/client/orderer/admin/fabric-ca-client-config.yaml
+2021/11/25 16:39:38 [INFO] TLS Enabled
+2021/11/25 16:39:38 [INFO] TLS Enabled
+Password: dcde0e4cd4f8bcc3f1d7a4ecda1d3f39
+======Completed: Step 1 : Registered orderer (can be done only once)====
+Copied the Client Yaml from /etc/hyperledger/config/caclient/fabric-ca-client-config.yaml/orderer
+======Completed: Step 2 : Copy Check Orderer Client YAML==========
+2021/11/25 16:39:38 [INFO] TLS Enabled
+2021/11/25 16:39:38 [INFO] generating key: &{A:ecdsa S:256}
+2021/11/25 16:39:38 [INFO] encoded CSR
+2021/11/25 16:39:39 [INFO] Stored client certificate at /etc/hyperledger/client/orderer/generalorderer/msp/signcerts/cert.pem
+2021/11/25 16:39:39 [INFO] Stored TLS root CA certificate at /etc/hyperledger/client/orderer/generalorderer/msp/tlscacerts/tls-ledger1-drosatos-eu-7054-ica.pem
+2021/11/25 16:39:39 [INFO] Stored TLS intermediate certificates at /etc/hyperledger/client/orderer/generalorderer/msp/tlsintermediatecerts/tls-ledger1-drosatos-eu-7054-ica.pem
+2021/11/25 16:39:39 [INFO] Stored Issuer public key at /etc/hyperledger/client/orderer/generalorderer/msp/IssuerPublicKey
+2021/11/25 16:39:39 [INFO] Stored Issuer revocation public key at /etc/hyperledger/client/orderer/generalorderer/msp/IssuerRevocationPublicKey
+======Completed: Step 3 : Enrolled orderer ========
+======Completed: Step 4 : MSP setup for the orderer========
+======Completed: Step 5 : Tar files for the orderer========
+====> 9. Orderer(s) completed!
+FABRIC_CA_CLIENT_HOME=/etc/hyperledger/client/duth/admin
+2021/11/25 16:39:41 [INFO] Configuration file location: /etc/hyperledger/client/duth/admin/fabric-ca-client-config.yaml
+2021/11/25 16:39:41 [INFO] TLS Enabled
+2021/11/25 16:39:41 [INFO] TLS Enabled
+Password: 44f747d8a2de5b69f86c25a49e5050d1
+======Completed: Step 1 : Registered peer (can be done only once)====
+2021/11/25 16:39:41 [INFO] TLS Enabled
+2021/11/25 16:39:41 [INFO] generating key: &{A:ecdsa S:256}
+2021/11/25 16:39:41 [INFO] encoded CSR
+2021/11/25 16:39:41 [INFO] Stored client certificate at /etc/hyperledger/client/duth/peer1duth/msp/signcerts/cert.pem
+2021/11/25 16:39:41 [INFO] Stored TLS root CA certificate at /etc/hyperledger/client/duth/peer1duth/msp/tlscacerts/tls-ledger1-drosatos-eu-7054-ica.pem
+2021/11/25 16:39:41 [INFO] Stored TLS intermediate certificates at /etc/hyperledger/client/duth/peer1duth/msp/tlsintermediatecerts/tls-ledger1-drosatos-eu-7054-ica.pem
+2021/11/25 16:39:41 [INFO] Stored Issuer public key at /etc/hyperledger/client/duth/peer1duth/msp/IssuerPublicKey
+2021/11/25 16:39:41 [INFO] Stored Issuer revocation public key at /etc/hyperledger/client/duth/peer1duth/msp/IssuerRevocationPublicKey
+======Completed: Step 3 : Enrolled peer1duth ========
+======Completed: Step 4 : MSP setup for the peer========
+======Completed: Step 5 : Tar files for the peer========
+FABRIC_CA_CLIENT_HOME=/etc/hyperledger/client/duth/admin
+2021/11/25 16:39:43 [INFO] Configuration file location: /etc/hyperledger/client/duth/admin/fabric-ca-client-config.yaml
+2021/11/25 16:39:43 [INFO] TLS Enabled
+2021/11/25 16:39:43 [INFO] TLS Enabled
+Password: 2b7f64224a5af3089433ce4656b23e9c
+======Completed: Step 1 : Registered peer (can be done only once)====
+2021/11/25 16:39:44 [INFO] TLS Enabled
+2021/11/25 16:39:44 [INFO] generating key: &{A:ecdsa S:256}
+2021/11/25 16:39:44 [INFO] encoded CSR
+2021/11/25 16:39:45 [INFO] Stored client certificate at /etc/hyperledger/client/duth/peer2duth/msp/signcerts/cert.pem
+2021/11/25 16:39:45 [INFO] Stored TLS root CA certificate at /etc/hyperledger/client/duth/peer2duth/msp/tlscacerts/tls-ledger1-drosatos-eu-7054-ica.pem
+2021/11/25 16:39:45 [INFO] Stored TLS intermediate certificates at /etc/hyperledger/client/duth/peer2duth/msp/tlsintermediatecerts/tls-ledger1-drosatos-eu-7054-ica.pem
+2021/11/25 16:39:45 [INFO] Stored Issuer public key at /etc/hyperledger/client/duth/peer2duth/msp/IssuerPublicKey
+2021/11/25 16:39:45 [INFO] Stored Issuer revocation public key at /etc/hyperledger/client/duth/peer2duth/msp/IssuerRevocationPublicKey
+======Completed: Step 3 : Enrolled peer2duth ========
+======Completed: Step 4 : MSP setup for the peer========
+======Completed: Step 5 : Tar files for the peer========
+FABRIC_CA_CLIENT_HOME=/etc/hyperledger/client/athena/admin
+2021/11/25 16:39:47 [INFO] Configuration file location: /etc/hyperledger/client/athena/admin/fabric-ca-client-config.yaml
+2021/11/25 16:39:47 [INFO] TLS Enabled
+2021/11/25 16:39:47 [INFO] TLS Enabled
+Password: d749c043a77ac2cc692e48c7045a7860
+======Completed: Step 1 : Registered peer (can be done only once)====
+2021/11/25 16:39:47 [INFO] TLS Enabled
+2021/11/25 16:39:47 [INFO] generating key: &{A:ecdsa S:256}
+2021/11/25 16:39:47 [INFO] encoded CSR
+2021/11/25 16:39:48 [INFO] Stored client certificate at /etc/hyperledger/client/athena/peer1athena/msp/signcerts/cert.pem
+2021/11/25 16:39:48 [INFO] Stored TLS root CA certificate at /etc/hyperledger/client/athena/peer1athena/msp/tlscacerts/tls-ledger1-drosatos-eu-7054-ica.pem
+2021/11/25 16:39:48 [INFO] Stored TLS intermediate certificates at /etc/hyperledger/client/athena/peer1athena/msp/tlsintermediatecerts/tls-ledger1-drosatos-eu-7054-ica.pem
+2021/11/25 16:39:48 [INFO] Stored Issuer public key at /etc/hyperledger/client/athena/peer1athena/msp/IssuerPublicKey
+2021/11/25 16:39:48 [INFO] Stored Issuer revocation public key at /etc/hyperledger/client/athena/peer1athena/msp/IssuerRevocationPublicKey
+======Completed: Step 3 : Enrolled peer1athena ========
+======Completed: Step 4 : MSP setup for the peer========
+======Completed: Step 5 : Tar files for the peer========
+FABRIC_CA_CLIENT_HOME=/etc/hyperledger/client/athena/admin
+2021/11/25 16:39:50 [INFO] Configuration file location: /etc/hyperledger/client/athena/admin/fabric-ca-client-config.yaml
+2021/11/25 16:39:50 [INFO] TLS Enabled
+2021/11/25 16:39:50 [INFO] TLS Enabled
+Password: ec37385e1135b1aa2c678b5ba31952cc
+======Completed: Step 1 : Registered peer (can be done only once)====
+2021/11/25 16:39:50 [INFO] TLS Enabled
+2021/11/25 16:39:50 [INFO] generating key: &{A:ecdsa S:256}
+2021/11/25 16:39:50 [INFO] encoded CSR
+2021/11/25 16:39:50 [INFO] Stored client certificate at /etc/hyperledger/client/athena/peer2athena/msp/signcerts/cert.pem
+2021/11/25 16:39:50 [INFO] Stored TLS root CA certificate at /etc/hyperledger/client/athena/peer2athena/msp/tlscacerts/tls-ledger1-drosatos-eu-7054-ica.pem
+2021/11/25 16:39:50 [INFO] Stored TLS intermediate certificates at /etc/hyperledger/client/athena/peer2athena/msp/tlsintermediatecerts/tls-ledger1-drosatos-eu-7054-ica.pem
+2021/11/25 16:39:50 [INFO] Stored Issuer public key at /etc/hyperledger/client/athena/peer2athena/msp/IssuerPublicKey
+2021/11/25 16:39:50 [INFO] Stored Issuer revocation public key at /etc/hyperledger/client/athena/peer2athena/msp/IssuerRevocationPublicKey
+======Completed: Step 3 : Enrolled peer2athena ========
+======Completed: Step 4 : MSP setup for the peer========
+======Completed: Step 5 : Tar files for the peer========
+====> 10. Peer(s) completed!
+================ Writing Genesis Block ================
+2021-11-25 16:39:52.907 UTC [common.tools.configtxgen] main -> INFO 001 Loading configuration
+2021-11-25 16:39:52.921 UTC [common.tools.configtxgen.localconfig] completeInitialization -> INFO 002 orderer type: etcdraft
+2021-11-25 16:39:52.921 UTC [common.tools.configtxgen.localconfig] Load -> INFO 003 Loaded configuration: /etc/hyperledger/config/configtx.yaml
+2021-11-25 16:39:52.925 UTC [common.tools.configtxgen] doOutputBlock -> INFO 004 Generating genesis block
+2021-11-25 16:39:52.925 UTC [common.tools.configtxgen] doOutputBlock -> INFO 005 Creating system channel genesis block
+2021-11-25 16:39:52.926 UTC [common.tools.configtxgen] doOutputBlock -> INFO 006 Writing genesis block
+====> 11. Genesis block completed!
+================ Writing  ================
+2021-11-25 16:39:54.956 UTC [common.tools.configtxgen] main -> INFO 001 Loading configuration
+2021-11-25 16:39:54.972 UTC [common.tools.configtxgen.localconfig] Load -> INFO 002 Loaded configuration: /etc/hyperledger/config/configtx.yaml
+2021-11-25 16:39:54.972 UTC [common.tools.configtxgen] doOutputChannelCreateTx -> INFO 003 Generating new channel configtx
+2021-11-25 16:39:54.973 UTC [common.tools.configtxgen] doOutputChannelCreateTx -> INFO 004 Writing new channel tx
+======= Done. Launch by executing orderer ======
+================ Writing  ================
+2021-11-25 16:39:56.021 UTC [common.tools.configtxgen] main -> INFO 001 Loading configuration
+2021-11-25 16:39:56.035 UTC [common.tools.configtxgen.localconfig] Load -> INFO 002 Loaded configuration: /etc/hyperledger/config/configtx.yaml
+2021-11-25 16:39:56.035 UTC [common.tools.configtxgen] doOutputChannelCreateTx -> INFO 003 Generating new channel configtx
+2021-11-25 16:39:56.036 UTC [common.tools.configtxgen] doOutputChannelCreateTx -> INFO 004 Writing new channel tx
+======= Done. Launch by executing orderer ======
+================ Writing  ================
+2021-11-25 16:39:57.067 UTC [common.tools.configtxgen] main -> INFO 001 Loading configuration
+2021-11-25 16:39:57.081 UTC [common.tools.configtxgen.localconfig] Load -> INFO 002 Loaded configuration: /etc/hyperledger/config/configtx.yaml
+2021-11-25 16:39:57.082 UTC [common.tools.configtxgen] doOutputChannelCreateTx -> INFO 003 Generating new channel configtx
+2021-11-25 16:39:57.085 UTC [common.tools.configtxgen] doOutputChannelCreateTx -> INFO 004 Writing new channel tx
+======= Done. Launch by executing orderer ======
+====> 12. Channels-tx completed!
+0 S  1000 3364627       1  4  80   0 - 274705 ep_pol pts/0   00:00:01 fabric-ca-serve
+./setup_ca.sh PLEASE - Go through the logs above to ensure there are NO errors!!!

@@ -1,0 +1,23 @@
+  - &$$u_name$$
+    Name: $$u_name$$
+    ID: $$u_name$$MSP
+    MSPDir: /etc/hyperledger/client/$$name$$/msp
+    Policies: &$$u_name$$Policies
+      Readers:
+          Type: Signature
+          # Any member can READ e.g., query
+          Rule: "OR('$$u_name$$MSP.member')"
+      Writers:
+          Type: Signature
+          # Any member can WRITE e.g., submit transaction
+          Rule: "OR('$$u_name$$MSP.member')"
+      Admins:
+          Type: Signature
+          # Either Acme admin OR Orderer Admin can carry out admin activities
+          Rule: "OR('$$u_name$$MSP.admin')"
+      Endorsement:
+          Type: Signature
+          # Any member can act as an endorser
+          Rule: "OR('$$u_name$$MSP.member')"
+    AnchorPeers:
+$$anchor$$

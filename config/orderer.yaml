@@ -1,0 +1,195 @@
+################################################################################
+#
+#   Orderer Configuration
+#
+################################################################################
+General:
+
+    # Used to be "GenesisMethod: file" in Fabric 1.x
+    BootstrapMethod: file
+
+    # Used to be "GenesisFile: ./acme-genesis.block" in Fabric 1.x
+    BootstrapFile: /etc/hyperledger/config/zerodata-genesis.block
+
+    # BCCSP Setup
+    BCCSP:
+        # Setup to use the Software CSP
+        Default: SW
+        SW:
+            HASH: SHA2
+            Security: 256
+            # Using the default 'LocalMSPDir/keystore'
+            FileKeyStore:
+                Keystore:
+
+    # Directory for the private crypto material needed by the
+    # orderer. 
+    LocalMSPDir: /etc/hyperledger/client/orderer/orderer/msp
+
+    # Identity to register the local MSP material with the MSP
+    LocalMSPID: OrdererMSP
+
+    # Listen address: The IP on which to bind to listen.
+    ListenAddress: 0.0.0.0
+
+    # Listen port: The port on which to bind to listen.
+    ListenPort: 7050
+
+    # Used orderer type = etcdraft
+    Cluster:
+        # SendBufferSize is the maximum number of messages in the egress buffer.
+        # Consensus messages are dropped if the buffer is full, and transaction
+        # messages are waiting for space to be freed.
+        SendBufferSize: 10
+        # ClientCertificate governs the file location of the client TLS certificate
+        # used to establish mutual TLS connections with other ordering service nodes.
+        ClientCertificate:
+        # ClientPrivateKey governs the file location of the private key of the client TLS certificate.
+        ClientPrivateKey:
+        # The below 4 properties should be either set together, or be unset together.
+        # If they are set, then the orderer node uses a separate listener for intra-cluster
+        # communication. If they are unset, then the general orderer listener is used.
+        # This is useful if you want to use a different TLS server certificates on the
+        # client-facing and the intra-cluster listeners.
+
+        # ListenPort defines the port on which the cluster listens to connections.
+        ListenPort:
+        # ListenAddress defines the IP on which to listen to intra-cluster communication.
+        ListenAddress:
+        # ServerCertificate defines the file location of the server TLS certificate used for intra-cluster
+        # communication.
+        ServerCertificate:
+        # ServerPrivateKey defines the file location of the private key of the TLS certificate.
+        ServerPrivateKey:
+
+    # Keepalive settings for the GRPC server.
+    Keepalive:
+        # Disconnect the client if the time between pings is less than the specified time
+        ServerMinInterval: 60s
+        # Server pings the clients on open connection with the specified time between pings
+        ServerInterval: 7200s
+        # Server expects the clients to respond to pings. Server disconnets if response not receieved within timeout
+        ServerTimeout: 20s
+
+    # TLS: TLS settings for the GRPC server.
+    TLS:
+        Enabled: true
+        PrivateKey: /etc/hyperledger/client/orderer/orderer/msp/tls/key.pem
+        Certificate: /etc/hyperledger/client/orderer/orderer/msp/tls/cert.pem
+        RootCAs:
+          - /etc/hyperledger/client/orderer/orderer/msp/tls/ca.pem
+        ClientAuthRequired: false
+        ClientRootCAs:
+
+
+################################################################################
+#
+#   SECTION: File Ledger
+#   - This section applies to the configuration of the file or json ledgers.
+################################################################################
+FileLedger:
+
+    # Location: The directory to store the blocks in.
+    # Windows - if you get a LevelDb error in launching orderer use the VM file 
+    # by uncommenting the following line - comment the Location: ./ledger 
+    Location: /var/ledgers/orderer/ledger
+
+    # The prefix to use when generating a ledger directory in temporary space.
+    Prefix: hyperledger-fabric-ordererledger    
+
+
+
+################################################################################
+#
+#   Debug Configuration
+#
+#   - This controls the debugging options for the orderer
+#
+################################################################################
+Debug:
+
+    # BroadcastTraceDir when set will cause each request to the Broadcast service
+    # for this orderer to be written to a file in this directory
+
+    # BroadcastTraceDir: ./trace
+    BroadcastTraceDir: 
+
+    # DeliverTraceDir when set will cause each request to the Deliver service
+    # for this orderer to be written to a file in this directory
+
+    # DeliverTraceDir: ./trace
+    DeliverTraceDir:
+
+
+################################################################################
+#
+#   Operations Configuration
+#
+#   - This configures the operations server endpoint for the orderer
+#
+################################################################################
+Operations:
+    # host and port for the operations server
+    ListenAddress: 0.0.0.0:8443
+
+    # TLS configuration for the operations endpoint
+    TLS:
+        # TLS enabled
+        Enabled: true
+
+        # Certificate is the location of the PEM encoded TLS certificate
+        Certificate: /etc/hyperledger/client/orderer/orderer/msp/tls/cert.pem
+
+        # PrivateKey points to the location of the PEM-encoded key
+        PrivateKey: /etc/hyperledger/client/orderer/orderer/msp/tls/key.pem
+
+        # Require client certificate authentication to access all resources
+        ClientAuthRequired: false
+
+        # Paths to PEM encoded ca certificates to trust for client authentication
+        RootCAs:
+          - /etc/hyperledger/client/orderer/orderer/msp/tls/ca.pem
+
+################################################################################
+#
+#   Metrics  Configuration
+#
+#   - This configures metrics collection for the orderer
+#
+################################################################################
+Metrics:
+    # The metrics provider is one of statsd, prometheus, or disabled
+    Provider: prometheus
+
+    # The statsd configuration
+    Statsd:
+      # network type: tcp or udp
+      Network: udp
+
+      # the statsd server address
+      Address: 0.0.0.0:8125
+
+      # The interval at which locally cached counters and gauges are pushed
+      # to statsd; timings are pushed immediately
+      WriteInterval: 30s
+
+      # The prefix is prepended to all emitted statsd metrics
+      Prefix:
+
+
+################################################################################
+# Used for orderer type = etcdraft
+################################################################################
+Consensus:
+    # The allowed key-value pairs here depend on consensus plugin. For etcd/raft,
+    # we use following options:
+
+    # WALDir specifies the location at which Write Ahead Logs for etcd/raft are
+    # stored. Each channel will have its own subdir named after channel ID.
+    WALDir: /var/ledgers/orderer/etcdraft/wal
+
+    # SnapDir specifies the location at which snapshots for etcd/raft are
+    # stored. Each channel will have its own subdir named after channel ID.
+    SnapDir: /var/ledgers/orderer/etcdraft/snapshot
+
+    EvictionSuspicion: 10m0s
