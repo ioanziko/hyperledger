@@ -248,7 +248,10 @@ sleep 1s";
       shell_exec("cp -rp /var/www/html/setup/bin/peer /var/www/html/setup/host/temp/bin/peer");
       shell_exec("cp -rp /var/www/html/setup/docker /var/www/html/setup/host/temp/");
       shell_exec("cp -rp /etc/hyperledger/config/core.yaml /var/www/html/setup/host/temp/");
-      
+      $add_peer = $add_peer.'
+sleep 5s
+cd $DIR/data/peer
+./peer_watchdog &>/dev/null &';      
       $add_peer = str_replace("\r", '', $add_peer);
      	file_put_contents("./host/$hosts/setup_peers.sh", $add_peer);    
       
