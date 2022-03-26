@@ -179,7 +179,39 @@ sleep ".'$SLEEP_TIME2'."";
 
 peer channel list
 
-echo "====> Peer launched, channels created and joined (if the channels have already created, it will appear an error but it is ok)!"';
+echo "====> Peer launched, channels created and joined (if the channels have already created, it will appear an error but it is ok)!"
+
+mkdir $DIR/peer/source
+';
+
+
+            for ($i_channel=0; $i_channel<count($_SESSION['channels']); $i_channel++) { 
+              
+              for ($z_channel=0; $z_channel<count($_SESSION['channels'][$i_channel]['orgs']); $z_channel++) {
+                if ($_SESSION['channels'][$i_channel]['orgs'][$z_channel] == $org_name) {
+                  $setup_peer = $setup_peer.'
+./commit-chaincode.sh '.$peer_name.' '.$_SESSION['orderers'][0][2].":".$_SESSION['orderers'][0][1].' "$DIR/peer/ccoc" ccoc "1.0" "1.0" node '.$_SESSION['channels'][$i_channel]['name'].' \'{"function":"initLedger","Args":[]}\'
+
+sleep 3s
+';
+                
+                
+                }
+            
+              }
+            
+            }
+ 
+            $setup_peer = $setup_peer.'
+docker_ip=$(docker ps -aqf "name='.$peer_name.'-ccoc")
+
+sleep 1s
+
+docker cp $DIR/peer/source $docker_ip:/usr/local/
+
+sleep 1s
+
+rm -r $DIR/peer/source';           
 
             $setup_peer = str_replace("\r", '', $setup_peer);
         	  file_put_contents("./host/temp/setup_".$peer_name.".sh", $setup_peer);
