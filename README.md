@@ -1,3 +1,19 @@
-# hyperledger
+## HFabD+M
 
-Design and Deployment of a Production Blockchain Network Based on Hyperledger Fabric thesis 2022
+HFabD+M is a web-based platform for deploying and man-
+aging a Hyperledger Fabric network.
+
+## Features 
+
+HFabD+M supports:
+- Automate deployment of Hyperledger Fabric Network
+- Chaincode and package distribution
+- Universal Managment Channel
+
+## Video Presentation
+
+
+## Getting Started 
+
+## Licence
+
