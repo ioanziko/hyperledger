@@ -1,3 +1,1 @@
-Σε αυτό το φάκελο κανονικά υπάρχουν τα binaries του Hyperledger, όμως επείδη είναι μεγάλα σε μέγεθος δεν συμπεριλήφθηκαν.
-Μπορούμε να εγκατασταθούν με την παρακάτω εντολή:
-curl -sSL https://bit.ly/2ysbOFE | bash -s
+Hyperledger Fabric's Binaries
