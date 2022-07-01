@@ -1,7 +1,6 @@
 ## HFabD+M
 
-HFabD+M is a web-based platform for deploying and man-
-aging a Hyperledger Fabric network.
+HFabD+M is a web-based platform for deploying and managing a Hyperledger Fabric network.
 
 ## Features 
 
