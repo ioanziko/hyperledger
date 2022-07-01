@@ -1,1 +1,1 @@
-Σε αυτό το φάκελο υπάρχουν οι πηγαίνει κώδικες των δύο C++ αρχείων καθώς και ένα shell script το οποιό δημιουργεί να apache server.
+Background Service source code and apache server setup
