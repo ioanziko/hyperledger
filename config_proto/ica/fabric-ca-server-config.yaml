@@ -179,7 +179,7 @@ cafiles:
 #############################################################################
 intermediate:
   parentserver:
-    url: https://admin:$$pw2$$@ledger1.drosatos.eu:7056
+    url: https://admin:$$pw2$$@$$url$$:7056
     caname: ca
 
   enrollment:
