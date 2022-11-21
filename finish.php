@@ -434,7 +434,7 @@ ps -eal | grep fabric-ca-serve
 echo "$0 PLEASE - Go through the logs above to ensure there are NO errors!!!"
 chmod -R 755 /etc/hyperledger/config/
 chmod -R 755 /etc/hyperledger/client/
-test -e /etc/hyperledger/client/caserver/admin/msp/signcerts/cert.pem && echo 1 > /var/www/html/setup/flag.txt || echo 0 > /var/www/html/setup/flag.txt';	
+test -e /etc/hyperledger/client/caserver/admin/msp/signcerts/cert.pem && echo 1 > $DIR/flag.txt || echo 0 > $DIR/flag.txt';	
 
 ?>
 	
